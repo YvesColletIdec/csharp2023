@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\MonPremierProjet\\MonPremierProjet.csproj",
-      "projectName": "MonPremierProjet",
-      "projectPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\MonPremierProjet\\MonPremierProjet.csproj",
+      "projectUniqueName": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
+      "projectName": "ProjetAdition",
+      "projectPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
       "packagesPath": "C:\\Users\\Yves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\MonPremierProjet\\obj\\",
+      "outputPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yves\\AppData\\Roaming\\NuGet\\NuGet.Config",

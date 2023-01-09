@@ -1,0 +1,15 @@
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\bin\Debug\net6.0\ProjetAdition.exe
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\bin\Debug\net6.0\ProjetAdition.deps.json
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\bin\Debug\net6.0\ProjetAdition.runtimeconfig.json
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\bin\Debug\net6.0\ProjetAdition.dll
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\bin\Debug\net6.0\ProjetAdition.pdb
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.csproj.AssemblyReference.cache
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.AssemblyInfoInputs.cache
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.AssemblyInfo.cs
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.csproj.CoreCompileInputs.cache
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.dll
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\refint\ProjetAdition.dll
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.pdb
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ProjetAdition.genruntimeconfig.cache
+C:\Users\Yves\github\csharp2023\MaPremiereSolution\ProjetAdition\obj\Debug\net6.0\ref\ProjetAdition.dll
