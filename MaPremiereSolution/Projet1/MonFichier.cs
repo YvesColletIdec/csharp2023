@@ -8,6 +8,8 @@ namespace nameprojet1
         static void Main(string[] args)
         {
             MaListe.ExempleDeListe();
+            List<int> listAEnvoyer = null;
+            MaListe.Jeveuxuneliste(listAEnvoyer);
             try
             {
                 Console.WriteLine("ouverture d'un fichier texte");

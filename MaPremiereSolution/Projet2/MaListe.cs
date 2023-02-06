@@ -8,6 +8,12 @@ namespace Projet2
 {
     public class MaListe
     {
+        public static List<int> Jeveuxuneliste(List<int> liste1)
+        {
+            List<int>  liste2 = new List<int>();
+            //...
+            return liste2;
+        }
         public static void ExempleDeListe()
         {
             string[] strings = { "salut", "hello", "coucou", "adieu" };
