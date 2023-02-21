@@ -51,6 +51,8 @@ namespace POO1
             File.WriteAllLines(cheminDestination, listeDeNoms);
             Eleve el = listeEleves[1];
             listeEleves = null;
+
+
         }
     }
 }

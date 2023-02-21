@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projet1", "Projet1\Projet1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projet2", "Projet2\Projet2.csproj", "{F5C4FEE2-647D-4253-BDBB-799E4027BEB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO1", "POO1\POO1.csproj", "{5B4EF058-AEBA-4107-8877-125554E7963A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POO1", "POO1\POO1.csproj", "{5B4EF058-AEBA-4107-8877-125554E7963A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticNonStatic", "StaticNonStatic\StaticNonStatic.csproj", "{E745CC2A-22AE-4F76-8DB9-79DBA27169DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticNonStatic", "StaticNonStatic\StaticNonStatic.csproj", "{E745CC2A-22AE-4F76-8DB9-79DBA27169DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POO2", "POO2\POO2.csproj", "{EE548B4D-8507-4AD9-9D98-5CFDB1346DEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{E745CC2A-22AE-4F76-8DB9-79DBA27169DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E745CC2A-22AE-4F76-8DB9-79DBA27169DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E745CC2A-22AE-4F76-8DB9-79DBA27169DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE548B4D-8507-4AD9-9D98-5CFDB1346DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE548B4D-8507-4AD9-9D98-5CFDB1346DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE548B4D-8507-4AD9-9D98-5CFDB1346DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE548B4D-8507-4AD9-9D98-5CFDB1346DEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
