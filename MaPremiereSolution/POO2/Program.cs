@@ -1,9 +1,12 @@
-﻿namespace POO2
+﻿using System.Runtime.CompilerServices;
+
+namespace POO2
 {
-    internal class Program
+    public class Program : Voiture
     {
         static void Main(string[] args)
         {
+            VoitureElectrique ve = new VoitureElectrique();
             Voiture a = new Voiture();
             a.SetMarque("BMW");
             a.SetCylindree(1500);

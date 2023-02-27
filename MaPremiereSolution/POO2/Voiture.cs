@@ -14,9 +14,11 @@ namespace POO2
 
         private string _puissance;
 
+        protected int Salut { get; set; }
+
         public Voiture()
         {
-            _aUnMoteur = true;
+            this._aUnMoteur = true;
             _nom = "toto";
         }
         public string GetPuissance()
