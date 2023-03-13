@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj": {}
+    "D:\\IDEC works and backup\\csharp2023_modif\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj": {
+    "D:\\IDEC works and backup\\csharp2023_modif\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
+        "projectUniqueName": "D:\\IDEC works and backup\\csharp2023_modif\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
         "projectName": "ProjetAdition",
-        "projectPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
-        "packagesPath": "C:\\Users\\Yves\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yves\\github\\csharp2023\\MaPremiereSolution\\ProjetAdition\\obj\\",
+        "projectPath": "D:\\IDEC works and backup\\csharp2023_modif\\MaPremiereSolution\\ProjetAdition\\ProjetAdition.csproj",
+        "packagesPath": "C:\\Users\\ykvir\\.nuget\\packages\\",
+        "outputPath": "D:\\IDEC works and backup\\csharp2023_modif\\MaPremiereSolution\\ProjetAdition\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Yves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ykvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
