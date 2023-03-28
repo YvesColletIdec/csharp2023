@@ -43,7 +43,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abstract", "Abstract\Abstra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Partial", "Partial\Partial.csproj", "{5053FE36-6757-4E0E-9523-3907CA6C387A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlFacture", "SqlFacture\SqlFacture.csproj", "{6A3E356D-5BE6-4664-8802-1CABEEAE1D65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlFacture", "SqlFacture\SqlFacture.csproj", "{6A3E356D-5BE6-4664-8802-1CABEEAE1D65}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEfCore", "TestEfCore\TestEfCore.csproj", "{EB2E322D-3BEB-466F-8574-87A1224EE65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +137,10 @@ Global
 		{6A3E356D-5BE6-4664-8802-1CABEEAE1D65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A3E356D-5BE6-4664-8802-1CABEEAE1D65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A3E356D-5BE6-4664-8802-1CABEEAE1D65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2E322D-3BEB-466F-8574-87A1224EE65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2E322D-3BEB-466F-8574-87A1224EE65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2E322D-3BEB-466F-8574-87A1224EE65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2E322D-3BEB-466F-8574-87A1224EE65C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
