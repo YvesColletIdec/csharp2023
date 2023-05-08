@@ -1,0 +1,27 @@
+﻿@model List<Categorie>
+
+<h1>Liste des catégories</h1>
+
+<a asp-controller="Categorie"asp-action="Create" class="btn btn-primary">Créer une nouvelle catégorie</a>
+<table class="table table-striped table-bordered">
+    <thead>
+        <th>N°</th>
+    <th>Nom</th>
+    <th>EstActif</th>
+    <th></th>
+    </thead>
+    <tbody>
+        @{
+            foreach(Categorie cat in Model)
+            {
+                <tr>
+                    <td width="5%">@cat.Id</td>
+                    <td width ="45%">@cat.Nom</td>
+                    <td width ="45%"><input type="checkbox" @(cat.Estactif == true ? "checked" : string.Empty) value="@cat.Estactif"/></td>
+                    <td width ="5%"><a asp-controller="Categorie" asp-action="Edit" asp-route-id="@cat.Id" class="btn btn-primary mx-2">Modifier</a></td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
