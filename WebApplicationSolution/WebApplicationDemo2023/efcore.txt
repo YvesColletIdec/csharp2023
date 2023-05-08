@@ -1,0 +1,4 @@
+﻿Microsoft.EntityFrameworkCore.Design 6.X
+Microsoft.EntityFrameworkCore.SqlServer 6.X
+lancer la commande dans un powershell (outils - ligne de commande - powershell) :
+dotnet ef dbcontext scaffold "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Yves\github\csharp2023\MaPremiereSolution\SqlFacture\Facture2023.mdf;Integrated Security=True;Connect Timeout=30;" Microsoft.EntityFrameworkCore.SqlServer -c SqlServerContext -f -o Models -p .
