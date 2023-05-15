@@ -15,6 +15,7 @@ namespace WebApplicationDemo2023.Controllers
 
         public IActionResult Indexa()
         {
+            TempData["message"] = "salut bienvenue";
             return View();
         }
 

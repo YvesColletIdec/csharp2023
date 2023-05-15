@@ -69,8 +69,7 @@ namespace WebApplicationDemo2023.Models
 
                 entity.Property(e => e.Estactif)
                     .IsRequired()
-                    .HasColumnName("estactif")
-                    .HasDefaultValueSql("((1))");
+                    .HasColumnName("estactif");
 
                 entity.Property(e => e.Nom).HasMaxLength(50);
             });

@@ -19,5 +19,24 @@ namespace WebApplicationDemo2023.Controllers
             List<Categorie> listeCat = _con.Categories.ToList();
             return View(listeCat);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Categorie c)
+        {
+            if (ModelState.IsValid)
+            {
+                _con.Categories.Add(c);
+                _con.SaveChanges();
+                TempData["message"] = "youpie la catégorie est ajoutée";
+                return RedirectToAction("Index");
+            }
+            return View(c);
+        }
     }
 }

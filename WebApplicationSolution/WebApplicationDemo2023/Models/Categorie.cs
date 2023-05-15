@@ -17,8 +17,8 @@ namespace WebApplicationDemo2023.Models
         public int Id { get; set; }
         [DisplayName("Nom de la catégorie")]
         [Required(ErrorMessage = "Le nom de la catégorie est obligatoire!!!!!!!")]
-        [MaxLength(100)]
-        [MinLength(5)]
+        [MinLength(5, ErrorMessage = "Attention minimum 5 caractères")]
+        [MaxLength(50)]
         public string Nom { get; set; } = null!;
         [DisplayName("Actif?")]
         public bool Estactif { get; set; }

@@ -1,0 +1,9 @@
+﻿@{
+    if (TempData["message"] != null && TempData["message"] != "")
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["message"]
+        </div>
+    }
+    
+}
