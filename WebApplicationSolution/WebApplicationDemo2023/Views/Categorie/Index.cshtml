@@ -23,7 +23,7 @@
                     <td width="5%">@cat.Id</td>
                     <td width ="45%">@cat.Nom</td>
                     <td width="45%"><input disabled type="checkbox" @(cat.Estactif == true ? "checked" : string.Empty) value="@cat.Estactif" /></td>
-                    <td width ="5%"><a asp-controller="Categorie" asp-action="Edit" asp-route-id="@cat.Id" class="btn btn-primary mx-2">Modifier</a></td>
+                    <td width ="5%"><a asp-controller="Categorie" asp-action="Update" asp-route-id="@cat.Id" class="btn btn-primary mx-2">Modifier</a></td>
                 </tr>
             }
         }

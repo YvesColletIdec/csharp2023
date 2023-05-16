@@ -33,7 +33,35 @@ namespace WebApplicationDemo2023.Controllers
             {
                 _con.Categories.Add(c);
                 _con.SaveChanges();
-                TempData["message"] = "youpie la catégorie est ajoutée";
+                TempData["messageOK"] = "youpie la catégorie est ajoutée";
+                return RedirectToAction("Index");
+            }
+            return View(c);
+        }
+
+        public IActionResult Update(int id)
+        {
+            //Categorie c = _con.Categories.Find(id);
+            Categorie c = _con.Categories.FirstOrDefault(c => c.Id == id);
+            if (c == null)
+            {
+                TempData["messageKO"] = "la catégorie souhaitée n'existe pas";
+                return RedirectToAction("Index");
+            } else {
+                return View(c);
+            }
+            
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Categorie c)
+        {
+            if (ModelState.IsValid)
+            {
+                _con.Categories.Update(c);
+                _con.SaveChanges();
+                TempData["messageOK"] = "youpie la catégorie est modifiée";
                 return RedirectToAction("Index");
             }
             return View(c);

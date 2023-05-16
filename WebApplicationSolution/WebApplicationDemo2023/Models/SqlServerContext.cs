@@ -22,6 +22,7 @@ namespace WebApplicationDemo2023.Models
         public virtual DbSet<Client> Clients { get; set; } = null!;
         public virtual DbSet<Facture> Factures { get; set; } = null!;
         public virtual DbSet<LigneFacture> LigneFactures { get; set; } = null!;
+        public virtual DbSet<Utilisateur> Utilisateurs { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -123,6 +124,19 @@ namespace WebApplicationDemo2023.Models
                     .HasForeignKey(d => d.FactureId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("LigneFacture_fk0");
+            });
+
+            modelBuilder.Entity<Utilisateur>(entity =>
+            {
+                entity.ToTable("Utilisateur");
+
+                entity.Property(e => e.Login).HasMaxLength(50);
+
+                entity.Property(e => e.MotDePasse).HasMaxLength(50);
+
+                entity.Property(e => e.Nom).HasMaxLength(50);
+
+                entity.Property(e => e.Role).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

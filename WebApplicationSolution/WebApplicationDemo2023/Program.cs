@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using WebApplicationDemo2023.Models;
 
@@ -18,6 +19,21 @@ namespace WebApplicationDemo2023
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddSession();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.Cookie.HttpOnly = true;
+                options.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest;
+                options.Cookie.Name = "UserLoginCookie";
+                options.ExpireTimeSpan = new TimeSpan(0, 0, 60, 0);
+                options.LoginPath = "/Login/Login";
+                options.SlidingExpiration = true;
+                options.Events = new CookieAuthenticationEvents();
+            });
+            builder.Services.AddHttpContextAccessor();
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -34,6 +50,8 @@ namespace WebApplicationDemo2023
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",

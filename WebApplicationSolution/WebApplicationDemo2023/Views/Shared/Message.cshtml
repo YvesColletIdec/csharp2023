@@ -1,8 +1,14 @@
 ﻿@{
-    if (TempData["message"] != null && TempData["message"] != "")
+    if (TempData["messageOK"] != null && TempData["messageOK"] != "")
     {
         <div class="alert alert-success" role="alert">
-            @TempData["message"]
+            @TempData["messageOK"]
+        </div>
+    }
+    if (TempData["messageKO"] != null && TempData["messageKO"] != "")
+    {
+        <div class="alert alert-danger" role="alert">
+            @TempData["messageKO"]
         </div>
     }
     

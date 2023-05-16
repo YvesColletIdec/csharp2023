@@ -1,0 +1,14 @@
+﻿@model Categorie
+
+<form asp-controller="Categorie" asp-action="Update" method="post">
+    <h1>Modifier une catégorie</h1>
+    <div asp-validation-summary="All"></div>
+    <label asp-for="Nom"></label>
+    <input asp-for="Nom" class="form-control"/>
+    <span asp-validation-for="Nom" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Estactif"></label>
+    <input asp-for="Estactif" />
+    <br/><br/>
+    <input type="submit" class="btn btn-primary" value="Sauver"/>
+</form>
