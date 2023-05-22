@@ -1,0 +1,27 @@
+﻿@model Client
+
+<form asp-controller="Client" asp-action="@(Model == null || Model.Id == null || Model.Id == 0 ? "Create" : "Update")" method="post">
+    <h1>@(Model == null || Model.Id == null || Model.Id == 0 ? "Créer un client" : "Modifier un client")</h1>
+    <div asp-validation-summary="All"></div>
+    <label asp-for="Nom"></label>
+    <input asp-for="Nom" class="form-control"/>
+    <span asp-validation-for="Nom" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Prenom"></label>
+    <input asp-for="Prenom" class="form-control" />
+    <span asp-validation-for="Prenom" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Npa"></label>
+    <select asp-for="Npa" class="form-control" asp-items="@ViewBag.ListNPA"></select>
+    <span asp-validation-for="Npa" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Adresse"></label>
+    <input asp-for="Adresse" class="form-control" />
+    <span asp-validation-for="Adresse" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Localite"></label>
+    <input asp-for="Localite" class="form-control" />
+    <span asp-validation-for="Localite" class="text-danger"></span>
+    <br /><br />
+    <input type="submit" class="btn btn-primary" value="Sauver"/>
+</form>

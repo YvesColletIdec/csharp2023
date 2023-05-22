@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WebApplicationDemo2023.Models;
 
 namespace WebApplicationDemo2023.Controllers
 {
+    [Authorize]
     public class CategorieController : Controller
     {
         private readonly ILogger<CategorieController> _logger;

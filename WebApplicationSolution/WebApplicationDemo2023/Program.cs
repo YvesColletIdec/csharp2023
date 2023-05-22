@@ -18,7 +18,7 @@ namespace WebApplicationDemo2023
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            
             builder.Services.AddSession();
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
             {
@@ -27,7 +27,7 @@ namespace WebApplicationDemo2023
                 options.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest;
                 options.Cookie.Name = "UserLoginCookie";
                 options.ExpireTimeSpan = new TimeSpan(0, 0, 60, 0);
-                options.LoginPath = "/Login/Login";
+                options.LoginPath = "/Login/Index";
                 options.SlidingExpiration = true;
                 options.Events = new CookieAuthenticationEvents();
             });
@@ -49,13 +49,14 @@ namespace WebApplicationDemo2023
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseSession();
+            
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Indexa}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
         }

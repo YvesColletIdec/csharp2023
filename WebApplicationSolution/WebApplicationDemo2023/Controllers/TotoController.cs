@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationDemo2023.Controllers
 {
+    [Authorize]
     public class TotoController : Controller
     {
         public IActionResult Index()

@@ -1,0 +1,38 @@
+﻿@model List<Client>
+
+<h1>Liste des clients</h1>
+<partial name="Message" />
+
+
+<br/>
+<a asp-controller="Client" asp-action="Create" class="btn btn-primary">Créer une nouveau client</a>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+        <th>N°</th>
+    <th>Nom</th>
+    <th>Prénom</th>
+            <th>Npa</th>
+            <th>Adresse</th>
+            <th>Localité</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(Client cli in Model)
+            {
+                <tr>
+                    <td width="5%">@cli.Id</td>
+                    <td width="5%">@cli.Nom</td>
+                    <td width="5%">@cli.Prenom</td>
+                    <td width="5%">@cli.Npa</td>
+                    <td width="5%">@cli.Adresse</td>
+                    <td width="5%">@cli.Localite</td>
+                    <td width="5%"><a asp-controller="Client" asp-action="Update" asp-route-id="@cli.Id" class="btn btn-primary mx-2">Modifier</a></td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>

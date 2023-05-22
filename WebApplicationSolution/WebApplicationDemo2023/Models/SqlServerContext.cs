@@ -132,7 +132,7 @@ namespace WebApplicationDemo2023.Models
 
                 entity.Property(e => e.Login).HasMaxLength(50);
 
-                entity.Property(e => e.MotDePasse).HasMaxLength(50);
+                entity.Property(e => e.MotDePasse).HasMaxLength(255);
 
                 entity.Property(e => e.Nom).HasMaxLength(50);
 

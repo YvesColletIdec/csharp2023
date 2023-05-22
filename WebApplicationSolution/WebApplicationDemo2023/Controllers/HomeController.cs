@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApplicationDemo2023.Models;
 
 namespace WebApplicationDemo2023.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -13,7 +15,8 @@ namespace WebApplicationDemo2023.Controllers
             _logger = logger;
         }
 
-        public IActionResult Indexa()
+        
+        public IActionResult Index()
         {
             TempData["message"] = "salut bienvenue";
             return View();
