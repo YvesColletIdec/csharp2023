@@ -1,0 +1,23 @@
+﻿@model Article
+
+<form asp-controller="Article" asp-action="@(Model == null || Model.Id == null || Model.Id == 0 ? "Create" : "Update")" method="post">
+    <h1>@(Model == null || Model.Id == null || Model.Id == 0 ? "Créer un article" : "Modifier un article")</h1>
+    <div asp-validation-summary="All"></div>
+    <label asp-for="Nom"></label>
+    <input asp-for="Nom" class="form-control"/>
+    <span asp-validation-for="Nom" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Designation"></label>
+    <input asp-for="Designation" class="form-control" />
+    <span asp-validation-for="Designation" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Prix"></label>
+    <input asp-for="Prix" class="form-control" />
+    <span asp-validation-for="Prix" class="text-danger"></span>
+    <br /><br />
+    <label asp-for="Categorie"></label>
+    <select asp-for="Categorie" class="form-control" asp-items="@ViewBag.ListCAT"></select>
+    <span asp-validation-for="Categorie" class="text-danger"></span>
+    <br /><br />
+    <input type="submit" class="btn btn-primary" value="Sauver"/>
+</form>

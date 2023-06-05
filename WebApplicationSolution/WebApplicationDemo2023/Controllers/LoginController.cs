@@ -1,5 +1,6 @@
 ﻿using Helpers;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using WebApplicationDemo2023.Models;
@@ -18,6 +19,15 @@ namespace WebApplicationDemo2023.Controllers
         {
             return View("Login");
         }
+
+        [Authorize]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -42,7 +52,8 @@ namespace WebApplicationDemo2023.Controllers
                     var userClaims = new[] {
                         new Claim(ClaimTypes.Name, utilisateur),
                         new Claim(ClaimTypes.Role, claimRole),
-                        new Claim("Id", u.Id.ToString())
+                        new Claim("Id", u.Id.ToString()),
+                        new Claim("Role", claimRole)
                     };
 
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(userClaims, "custom");

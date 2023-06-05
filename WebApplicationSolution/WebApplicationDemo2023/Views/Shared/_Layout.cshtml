@@ -29,6 +29,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
                         </li>
+                        @{
+                            string role = User.Claims.FirstOrDefault(x => x.Type == "Role").Value;
+                            if (role == "admin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Article" asp-action="Index">Articles</a>
+                                </li>
+                            }
+
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">
+                                Se déconnecter (Salut @HttpContextAccessor.HttpContext.Session.GetString("userName"))</a>
+                        </li>
+
+                        
                     </ul>
                 </div>
             </div>

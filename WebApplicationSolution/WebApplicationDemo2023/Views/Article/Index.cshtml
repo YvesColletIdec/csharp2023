@@ -1,0 +1,36 @@
+﻿@model List<Article>
+
+<h1>Liste des articles</h1>
+<partial name="Message" />
+
+
+<br/>
+<a asp-controller="Article" asp-action="Create" class="btn btn-primary">Créer une nouvel article</a>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+        <th>N°</th>
+    <th>Nom</th>
+    <th>Désignation</th>
+            <th>Prix</th>
+            <th>Catégorie</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(Article art in Model)
+            {
+                <tr>
+                    <td width="5%">@art.Id</td>
+                    <td width="5%">@art.Nom</td>
+                    <td width="5%">@art.Designation</td>
+                    <td width="5%">@art.Prix</td>
+                    <td width="5%">@(art.Categorie == null ? "-" : art.Categorie.Nom)</td>
+                    <td width="5%"><a asp-controller="Article" asp-action="Update" asp-route-id="@art.Id" class="btn btn-primary mx-2">Modifier</a></td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>
