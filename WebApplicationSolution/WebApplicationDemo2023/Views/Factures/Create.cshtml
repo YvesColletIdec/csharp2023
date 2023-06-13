@@ -1,0 +1,191 @@
+﻿@using Newtonsoft.Json;
+@model WebApplicationDemo2023.Models.Facture;
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h4>Création d'une facture</h4>
+<hr />
+@*<form asp-action="Create" onsubmit="return GetLignesFacture()">*@
+<div class="container">
+    @*pour aligner à gauche (pas que ça soit réparti sur toute la largeur*@
+        <div class="d-inline-flex align-items-start">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* me-5 pour laisser un margin entre les composants*@
+
+            <div class="col-sm  me-5">
+            <div class="form-group">
+                <label asp-for="DateFacture" class="control-label"></label>
+                <input asp-for="DateFacture" class="form-control widthAuto" />
+                <span asp-validation-for="DateFacture" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="col-sm">
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control widthAuto" asp-items="ViewBag.Clients">
+                    <option value="" selected="selected">[Veuillez sélectionner un client]</option>
+                </select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+    </div>
+  </div>
+  <br/>
+        <div class="d-inline-flex align-items-start mt-4">
+    <div class="col-sm me-5">
+            <div class="form-group">
+                <select id="Articles"
+                        name="Articles"
+                        class="form-control widthAuto"
+                        size="10">
+                    @{
+                        List<Article> listArticles = JsonConvert.DeserializeObject<List<Article>>(ViewBag.ArticlesJson);
+                    }
+                    @foreach (Article a in listArticles)
+                        {
+                            <option value="@a.Id">@a.Nom</option>
+                        }
+                </select>
+            </div>
+    </div>
+    <div class="col-sm">
+            <div class="form-group">
+                <input type="hidden" id="IdArticleToAdd" value=""/>
+                N° Article :
+                <input type="text" readonly="readonly" id="Num" value="" class="form-control widthAuto" />
+                
+                Nom :
+                <input type="text" readonly="readonly" id="Nom" value="" class="form-control widthAuto" />
+
+                Quantité :
+                <input type="number" min="1" id="Quantite" value="" class="form-control widthAuto" />
+
+                Prix unitaire :
+                <input type="number" min="1" id="PrixUnitaire" value="" class="form-control widthAuto" />
+                <br/>
+                <!--TODO on est dans un form, pour les boutons qui appelle du javascript il ne faut pas leur donner d'id ou name-->
+                    <input type="button" class="btn btn-primary" value="Ajouter" onclick="AddArticle()" />
+            </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+        <div class="col-md-4 mt-3">
+            
+            <table class="table table-striped table-sm" id="TableLignesFacture">
+                <thead>
+                    <tr><th scope="col">#</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(LigneFacture lf in Model.LigneFactures)
+                    {
+                        <tr>
+                            <th scope="row">@lf.Id</th>
+                            <td>@lf.Article.Id</td>
+                            <td>@lf.Article.Nom</td>
+                            <td>@lf.Quantite</td>
+                            <td>@lf.PrixUnitaire</td>
+                            <td>@lf.MontantTotalCHF</td>
+                            <td>delete</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="form-group">
+            @*<input type="submit" value="Enregistrer" class="btn btn-primary" />*@
+            <input type="button" value="Sauver" id="Update" onclick="GetLignesFacture()" />
+            </div>
+        
+    </div>
+</div>
+@*</form>*@
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script>
+    //quand on clique sur un article on affiche les infos dans la partie détail à droite
+    const select = document.getElementById('Articles');
+    var id = 0;
+    var nom = "";
+    select.addEventListener('change', function handleChange(event) {
+        id = event.target.value;
+        //déserialisation de la liste
+        var Articles = JSON.parse(@Html.Raw(Json.Serialize(@ViewBag.ArticlesJson)));
+        for (var i = 0; i < Articles.length; i++) {
+            if (id == Articles[i].Id)
+            {
+                document.getElementById('IdArticleToAdd').value = Articles[i].Id;
+                document.getElementById('Num').value = Articles[i].Id;
+                document.getElementById('Nom').value = Articles[i].Nom;
+                document.getElementById('Quantite').value = 1;
+                document.getElementById('PrixUnitaire').value = Articles[i].Prix;
+            }
+        }
+    });
+</script>
+<script>
+    //ajout d'un article dans le tableau
+    //TODO tester que tout soit rempli
+    function AddArticle() {
+        var id = $("#IdArticleToAdd").val();
+        var nom = $("#Nom").val();
+        var quantite = $("#Quantite").val();
+        var prixUnitaire = $("#PrixUnitaire").val();
+        if (id == '' || nom == '' || quantite == 0 || quantite == '' || prixUnitaire == 0 || prixUnitaire == '')
+        {
+            alert(id + '/' + nom + '/' + quantite + '/' + prixUnitaire);
+        } else {
+            var tr = "<tr><td>-</td><td>" + id + "</td><td>" + nom + "</td><td>" + quantite + "</td><td>" + prixUnitaire + "</td><td>" + (quantite * prixUnitaire) + "</td><td>X</td></tr>";
+        $("#TableLignesFacture").append(tr);
+        }  
+    }
+</script>
+<script>
+    //récupération des lignes dans la table pour les ajouter à lignes factures
+    function GetLignesFacture() {
+        var result = [];
+        var tr = $("#TableLignesFacture tr");
+        for (var i = 1; i < tr.length; i++) {
+            var tds = $(tr[i]).find("td");
+            if (tds.length > 0) {
+                result.push({
+                    "ArticleId": tds[1].innerHTML,
+                    "Quantite": tds[3].innerHTML,
+                    "PrixUnitaire": tds[4].innerHTML
+                })
+            }
+        }
+        //récupération des données de la nouvelle facture
+        var date = document.getElementById('DateFacture').value;
+        var client = document.getElementById('ClientId').value;
+        var jsonData = {
+                "LignesFacture": result,
+                "DateFacture": date,
+                "ClientId": client
+            }
+            $.ajax({
+                dataType: 'json',
+                type: "Post",
+                data: jsonData,
+            url: "/Factures/CreateNewFacture",
+                success: function (html) {
+                // recharge la page pour afficher les factures
+                window.location.replace("/Factures/Index");
+                }
+            })
+    }
+</script>
+@section Scripts {
+    
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+}

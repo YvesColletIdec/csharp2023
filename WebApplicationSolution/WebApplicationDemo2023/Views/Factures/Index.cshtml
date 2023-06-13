@@ -1,0 +1,36 @@
+﻿@model List<Facture>
+
+<h1>Liste des factures</h1>
+<partial name="Message" />
+
+
+<br/>
+<a asp-controller="Factures" asp-action="Create" class="btn btn-primary">Créer une nouvelle Facture</a>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+        <th>N°</th>
+    <th>Date</th>
+    <th>Client</th>
+            <th>Nombre d'articles</th>
+            <th>Total</th>
+    <th></th>
+    </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(Facture f in Model)
+            {
+                <tr>
+                    <td width="5%">@f.Id</td>
+                    <td width="5%">@f.DateFacture</td>
+                    <td width="5%">@f.Client.Prenom</td>
+                    <td width="5%">@f.LigneFactures.Sum(x => x.Quantite)</td>
+                    <td width="5%">@f.MontantTotalCHF</td>
+                    <td width="5%"><a asp-controller="Print" asp-action="Print" asp-route-factureId="@f.Id" target="_blank" class="btn btn-primary mx-2">Imprimer</a></td>
+                </tr>
+            }
+        }
+        
+    </tbody>
+</table>

@@ -29,6 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">Clients</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Factures" asp-action="Index">Factures</a>
+                        </li>
                         @{
                             string role = User.Claims.FirstOrDefault(x => x.Type == "Role").Value;
                             if (role == "admin")

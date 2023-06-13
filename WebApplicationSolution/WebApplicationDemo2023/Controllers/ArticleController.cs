@@ -9,12 +9,10 @@ namespace WebApplicationDemo2023.Controllers
     [Authorize(Roles = "admin")]
     public class ArticleController : Controller
     {
-        private readonly ILogger<ClientController> _logger;
         private SqlServerContext _con;
 
-        public ArticleController(ILogger<ClientController> logger, SqlServerContext connection)
+        public ArticleController(SqlServerContext connection)
         {
-            _logger = logger;
             _con = connection;
         }
 

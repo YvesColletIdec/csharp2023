@@ -18,5 +18,8 @@ namespace WebApplicationDemo2023.Models
 
         public virtual Client Client { get; set; } = null!;
         public virtual ICollection<LigneFacture> LigneFactures { get; set; }
+        public int? UtilisateurId { get; set; }
+
+        
     }
 }

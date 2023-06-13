@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApplicationDemo2023.Models;
 
 namespace WebApplicationDemo2023.Controllers
 {
